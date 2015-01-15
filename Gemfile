@@ -49,6 +49,7 @@ group :development, :test do
 
   gem 'paperclip'
 
+  ruby '2.2.0'
   
 end
 
