@@ -1,0 +1,33 @@
+<h1>Editing country</h1>
+ 
+<%= form_for @country, url: country_path(@country) , :html => { :multipart => true }, method: :patch do |f| %>
+ 
+  <% if @country.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@country.errors.count, "error") %> prohibited
+        this submission from being saved:
+      </h2>
+      <ul>
+        <% @country.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label "Name of country" %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+
+  <%= f.file_field :photo %>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', countries_path %>

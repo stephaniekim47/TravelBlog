@@ -1,0 +1,41 @@
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
+
+<%= stylesheet_link_tag "new" %>
+
+<%= form_for :country, url: countries_path, :html => { :multipart => true } do |f| %>
+ 
+  <% if @country.errors.any? %>
+    <div id="error_explanation">
+
+        <%= pluralize(@country.errors.count, "error") %> prohibited
+        this country from being saved:
+      <ul>
+        <% @country.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<center>
+  <p>
+
+  <div id="container">
+    <div id="country_name">
+    <%= f.label "New country" %><br></div>
+    <%= f.text_field :title, id: "box"%>
+  </p>
+ 
+
+ <p>
+  <div id="upload">
+   <%= f.file_field :photo %></div>
+</p>
+  <p>
+    <div id="submit">
+    <%= f.submit %></div>
+  </p>
+  <div id="back">
+  <%= link_to 'Back', countries_path%></div>
+</center>
+</div>
+<% end %>

@@ -1,0 +1,43 @@
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
+<%= javascript_include_tag "index" %>
+<%= stylesheet_link_tag "index", :media => "all" %>
+
+<div id="country_container">
+
+<div id="countries">Countries</div>
+
+
+<%= link_to new_country_path do %>
+  <div id="wrapper">
+  <div id="new_country">
+    <div id="new_country_text" >
+      New Country
+    </div>
+  </div>
+</div>
+<% end %>
+</div>
+
+
+
+  <% @countries.each do |country| %>
+      <div id="each">
+      <div id="title">
+      <%= link_to country.title, country_path(country), id: "title_text" %></div><br>
+      <%= link_to " ", country_path(country), id: "pic_overlay" %>
+      <div id="pic_container">
+      <div id="pic_cropper">
+      <div id="pic">
+      <%= link_to( image_tag(country.photo.url(:medium)), country_path(country) ) %></div></div></div>
+      <div id="ed">
+      <%= link_to "Edit", edit_country_path(country), id: "editer" %> 
+      <div id="line"> | </div> 
+      <%= link_to "Delete", country_path(country), data: { confirm: 'Are you sure?' }, method: :delete, id: "deleter" %>
+      </div>
+    </div>
+
+  <% end %>
+
+
+
+

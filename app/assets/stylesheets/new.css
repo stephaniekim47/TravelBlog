@@ -1,0 +1,55 @@
+
+body {
+	font-family: open sans;
+	background-color: whitesmoke;
+}
+
+#country_name {
+    font-size: 43px;
+    padding-bottom: 20px;
+}
+
+#box {
+    height: 30px;
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 100;
+
+}
+
+#upload {
+    width: 200px;
+    padding-bottom: 2px;
+}
+
+#back {
+	color: white;
+	font-size: 16px;
+	width: 100px;
+	padding: 9px;
+	background-color: #1abc9c;
+	border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#container {
+    width: 500px;
+    height: 600px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#submit {
+    padding-bottom: 9px;
+}
+
+#error_explanation {
+    position: absolute;
+}
+
