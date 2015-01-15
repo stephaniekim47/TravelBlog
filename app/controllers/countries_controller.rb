@@ -1,6 +1,6 @@
 class CountriesController < ApplicationController
    
-   
+   http_basic_authenticate_with name: "steph", password: "1029", except: [:index, :show]
 
    def show
        @country = Country.find(params[:id])

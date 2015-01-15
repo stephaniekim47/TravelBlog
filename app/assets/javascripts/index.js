@@ -2,15 +2,22 @@ $(document).on('ready page:load', function () {
 
 function fixDiv() {
     var $div = $("#wrapper");
-    if ($(window).scrollTop() > $div.data("top")) { 
-        $('#wrapper').css({'z-index': '600', 'position': 'fixed', 'top': '0', 'width': '100%', 'height': '57px'}); 
+    if ($(window).scrollTop() > $div.data("top")+8) { 
+        $('#wrapper').addClass("fixed"); 
+        $('#cont').addClass("pad"); 
+ 
+
     }
     else {
-        //$('#wrapper').css({'position': 'static', 'top': 'auto', 'width': '100%', 'height': '57px'});
-    	$('#wrapper').css({'position': 'static', 'width': '100%', 'height': '57px', })	
+    	$('#wrapper').removeClass("fixed"); 
+    	$('#cont').removeClass("pad"); 
+
+
     }	
 }
 
-$("#wrapper").data("top", $("#wrapper").offset().top); // set original position on load
+$("#wrapper").data("top", $("#wrapper").offset().top); 
+
 $(window).scroll(fixDiv);
+
 });
