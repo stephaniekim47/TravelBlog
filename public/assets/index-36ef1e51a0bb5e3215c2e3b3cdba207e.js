@@ -1,0 +1,1 @@
+$(document).on("ready page:load",function(){function a(){var a=$("#wrapper");$(window).scrollTop()>a.data("top")+8?($("#wrapper").addClass("fixed"),$("#cont").addClass("pad")):($("#wrapper").removeClass("fixed"),$("#cont").removeClass("pad"))}$("#wrapper").data("top",$("#wrapper").offset().top),$(window).scroll(a)});
