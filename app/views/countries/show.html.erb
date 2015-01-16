@@ -9,4 +9,29 @@
 <div id="photo">
 <%= image_tag @country.photo.url(:medium) %></div>
 <br>
+
+<%= link_to 'New City', new_country_city_path(@country)%>
+
+<% @country.cities.each do |city| %>
+
+    <%= city.title %>
+    <%= image_tag city.photo.url(:small) %>
+  
+<% end %>
+
+
+<%= form_for [@country, @country.cities.build], :html => { :multipart => true } do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <%= f.file_field :photo %>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
 <%= link_to 'Back', countries_path %>

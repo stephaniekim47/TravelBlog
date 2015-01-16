@@ -1,0 +1,12 @@
+<%= form_for [@country, @country.cities.build], :html => { :multipart => true } do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <%= f.file_field :photo %>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
