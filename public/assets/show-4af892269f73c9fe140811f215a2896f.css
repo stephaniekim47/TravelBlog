@@ -1,0 +1,69 @@
+body {
+	font-family: open sans;
+	margin: 0 auto;
+    padding: 0;
+}
+
+#country_container {
+    position: absolute;
+}
+
+#photo {
+    height: 100%;
+    width: 100%;
+}
+
+#window {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    /* display: inline; */
+    /* position: relative; */
+    /* overflow: hidden; */
+    border-radius: 50%;
+    border: solid;
+}
+
+#circle {
+    height: inherit;
+}
+
+
+#container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+}
+
+
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+#backphoto {
+    width: inherit;
+    height: inherit;
+}
+
+#country_name {
+    opacity: 1;
+    color: black;
+    text-align: center;
+    font-size: 45px;
+    font-weight: 200;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+

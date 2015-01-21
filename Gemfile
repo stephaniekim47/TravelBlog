@@ -8,6 +8,10 @@ group :development, :test do
 	gem 'sqlite3'
 end
 
+gem 'devise'
+
+gem 'cancan'
+
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -59,3 +63,5 @@ group :development, :test do
   
 end
 
+
+gem 'mocha', group: :test

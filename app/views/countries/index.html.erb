@@ -3,18 +3,44 @@
 <%= javascript_include_tag "index" %>
 <%= stylesheet_link_tag "index", :media => "all" %>
 
+<% if current_user %>
+  <div class="log">
+    <%= link_to "", destroy_user_session_path, method: :delete, id: "stuff" %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "log_text" %></div>
+
+  <%# link_to "Profile", new_profile_path(current_user) %>
+<% else %>
+    <div class="log">
+      <%= link_to "", new_user_session_path, id: "stuff" %>
+      <%= link_to "Login", new_user_session_path, :class => "log_text" %>
+    </div>
+
+<% end %>
+
+
+
+
+
+
+<div id="background"></div>
+
+      <div id="wrapper">
+        <div id="new_country_box">
+        <%= link_to '', new_country_path, id: "new_country" %> 
+          <%= link_to 'New Country', new_country_path, id: "new_country_text" %>
+
+          </div></div>
+
 <div id="country_container">
 
   <div id="countries">Countries</div>
-    <%= link_to new_country_path do %>
-      <div id="wrapper">
-        <div id="new_country">
-          <div id="new_country_text" >
-            New Country
-          </div>
+    
+
+          
         </div>
+
+
       </div>
-  <% end %>
 
 </div>
 
@@ -29,7 +55,11 @@
       <div id="pic">
       <%= link_to( image_tag(country.photo.url(:medium)), country_path(country) ) %></div></div></div>
       <div id="ed">
-      <%= link_to "Edit", edit_country_path(country), id: "editer" %> 
+      <% if current_user == country.user %>
+        <div id="editer">
+
+        <%= link_to( '', edit_country_path(country), id: "icon") %></div></div>
+      <% end %>
       <div id="line"> | </div> 
       <%= link_to "Delete", country_path(country), data: { confirm: 'Are you sure?' }, method: :delete, id: "deleter" %>
       </div>

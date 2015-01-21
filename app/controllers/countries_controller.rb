@@ -1,23 +1,38 @@
 class CountriesController < ApplicationController
    
-   http_basic_authenticate_with name: "steph", password: "1029", except: [:index, :show]
+   before_filter :require_permission, :except => [:show, :index, :new, :create]
+
+   def require_permission
+      if current_user != Country.find(params[:id]).user 
+          redirect_to root_path
+    end
+  end
 
    def show
        @country = Country.find(params[:id])
    end
 
    def create
+      if current_user
        @country = Country.new(country_params)
+       @country.user = current_user
 
        if @country.save
           redirect_to @country
        else 
           render 'new'
         end
+      else
+        redirect_to root_path
+      end
    end   
 
    def new
-      @country = Country.new
+      if current_user
+        @country = Country.new
+      else
+        redirect_to root_path
+      end
    end
 
    def index

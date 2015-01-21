@@ -2,36 +2,39 @@
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
 
-<div id="country_name">
-<%= @country.title %>
+<div id="country_container">
+    <div id="country_name">
+        <%= @country.title %>
+    </div>
+<div id="back_container">
+    <%= link_to '', countries_path, id: "back_box" %>
+<%= link_to 'Back', countries_path, id: "back" %></div>
+
 </div>
-<br>
-<div id="photo">
-<%= image_tag @country.photo.url(:medium) %></div>
-<br>
+<div id="container">
+    <div id="new_city_box">
+    <%= link_to '', new_country_city_path(@country), id: "new_city_center"%>
+    <%= link_to 'New City', new_country_city_path(@country), id: "newcitylink" %></div>
+        
+        <div id="city_boxes" >
+        <% @country.cities.each do |city| %>
 
-<%= link_to 'New City', new_country_city_path(@country)%>
-
-<% @country.cities.each do |city| %>
-
-    <%= city.title %>
-    <%= image_tag city.photo.url(:small) %>
-  
-<% end %>
-
-
-<%= form_for [@country, @country.cities.build], :html => { :multipart => true } do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-
-  <%= f.file_field :photo %>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+            <div id="window_container">
+                <div id="window_overlay"></div>
+                <div id="city_title">
+                    <%= city.title %></div>
+                <div id="window">
+                  <div id="circle_div">
+                <%= image_tag city.photo.url(:medium), id: "circle" %></div>
+                </div>
+                <div id="links">
+                <div id="delete_div">
+                 <%= link_to 'Delete', [city.country, city], method: :delete, data: { confirm: 'Are you sure?' }, id: "delete_text" %></div>                
 
 
-<%= link_to 'Back', countries_path %>
+
+            </div></div>
+
+        <% end %>
+
+</div>
