@@ -58,7 +58,7 @@
       <% if current_user == country.user %>
         <div id="editer">
 
-        <%= link_to( '', edit_country_path(country), id: "icon") %></div></div>
+        <%= link_to( 'Edit', edit_country_path(country), id: "icon") %></div></div>
       <% end %>
       <div id="line"> | </div> 
       <%= link_to "Delete", country_path(country), data: { confirm: 'Are you sure?' }, method: :delete, id: "deleter" %>
