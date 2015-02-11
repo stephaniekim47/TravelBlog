@@ -1,0 +1,80 @@
+
+body {
+    font-family: open sans;
+    margin: 0;
+}
+
+#country_name {
+    font-size: 43px;
+    padding-bottom: 20px;
+    z-index: inherit;
+    margin-top: 68px;
+}
+
+#box {
+    height: 30px;
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 100;
+
+    background-color: #9bd1dd;
+    color: white;
+    border-radius: 7px;
+}
+
+#upload {
+    width: 200px;
+    padding-bottom: 2px;
+}
+
+#back {
+    color: white;
+    font-size: 16px;
+    width: 100px;
+    padding: 9px;
+    background-color: #1abc9c;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#container {
+    width: 500px;
+    height: 450px;
+    display: table-cell;
+    vertical-align: middle;
+    z-index: 100;
+    position: absolute;
+    background-color: rgba(236, 240, 241,0.9);
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px;
+}
+
+#submit {
+    padding-bottom: 9px;
+}
+
+#error_explanation {
+    position: absolute;
+}
+
+#background {
+    width: 100%;
+    height: 100%;
+    background-image: url(http://people.engr.ncsu.edu/mfms/images/paris-metro.jpg);
+    position: absolute;
+    z-index: 100;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}

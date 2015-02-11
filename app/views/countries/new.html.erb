@@ -1,12 +1,16 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
 
 <%= stylesheet_link_tag "new" %>
+  <%= link_to countries_path do %>
+  <div id="back">Back</div>
+  <% end %>
+
 
 <%= form_for :country, url: countries_path, :html => { :multipart => true } do |f| %>
- 
+ <div id="error_explanation">
   <% if @country.errors.any? %>
         <%= pluralize(@country.errors.count, "error") %> prohibited
-    <div id="error_explanation">
+
 
         this country from being saved:
       <ul>
@@ -14,16 +18,19 @@
           <li><%= msg %></li>
         <% end %>
       </ul>
-    </div>
+
   <% end %>
+    </div>
 <center>
-  <p>
+
+<div id="background">
+</div>
 
   <div id="container">
     <div id="country_name">
     <%= f.label "New country" %><br></div>
     <%= f.text_field :title, id: "box"%>
-  </p>
+
  
 
  <p>
@@ -35,9 +42,7 @@
     <%= f.submit %></div>
   </p>
 
-  <%= link_to countries_path do %>
-  <div id="back">Back</div>
-  <% end %>
+
 </center>
 </div>
 <% end %>

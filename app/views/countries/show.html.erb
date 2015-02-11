@@ -2,22 +2,36 @@
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
 
+<div id="background">
+    <%= image_tag @country.photo.url(:medium), :id => "back_image" %>
+</div>
+
+<div id="back_overlay">
+    </div>
+
+  <%= link_to countries_path do %>
+  <div id="back">Back</div>
+  <% end %>
+
 <div id="country_container">
     <div id="country_name">
         <%= @country.title %>
     </div>
-<div id="back_container">
-    <%= link_to '', countries_path, id: "back_box" %>
-<%= link_to 'Back', countries_path, id: "back" %></div>
 
 </div>
+
+
 <div id="container">
     <div id="new_city_box">
     <%= link_to '', new_country_city_path(@country), id: "new_city_center"%>
     <%= link_to 'New City', new_country_city_path(@country), id: "newcitylink" %></div>
         
+
         <div id="city_boxes" >
-        <% @country.cities.each do |city| %>
+
+
+
+            <% @country.cities.each do |city| %>
 
             <div id="window_container">
                 <div id="window_overlay"></div>
@@ -29,12 +43,14 @@
                 </div>
                 <div id="links">
                 <div id="delete_div">
-                 <%= link_to 'Delete', [city.country, city], method: :delete, data: { confirm: 'Are you sure?' }, id: "delete_text" %></div>                
+                 <%= link_to 'Delete', [city.country, city], method: :delete, id: "delete_text" %></div>                
 
 
 
             </div></div>
 
         <% end %>
+
+    </div>
 
 </div>

@@ -3,17 +3,18 @@
 <%= javascript_include_tag "index" %>
 <%= stylesheet_link_tag "index", :media => "all" %>
 
-<% if current_user %>
-  <div class="log">
-    <%= link_to "", destroy_user_session_path, method: :delete, id: "stuff" %>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "log_text" %></div>
-
-  <%# link_to "Profile", new_profile_path(current_user) %>
-<% else %>
+<% unless current_user %>
     <div class="log">
       <%= link_to "", new_user_session_path, id: "stuff" %>
       <%= link_to "Login", new_user_session_path, :class => "log_text" %>
     </div>
+
+
+  <%# link_to "Profile", new_profile_path(current_user) %>
+<% else %>
+  <div class="log">
+    <%= link_to "", destroy_user_session_path, method: :delete, id: "stuff" %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "log_text" %></div>
 
 <% end %>
 
@@ -58,15 +59,19 @@
       <% if current_user == country.user %>
         <div id="editer">
 
-        <%= link_to( 'Edit', edit_country_path(country), id: "icon") %></div></div>
-      <% end %>
+        <%= link_to(  image_tag('edit.png'), edit_country_path(country), id: "icon") %></div>
+      
       <div id="line"> | </div> 
-      <%= link_to "Delete", country_path(country), data: { confirm: 'Are you sure?' }, method: :delete, id: "deleter" %>
+      <div id="deleter">
+      <%= link_to image_tag('delete.png'), country_path(country), method: :delete, id: "icon" %></div>
+
+      <% end %>
+     </div>
       </div>
     </div>
 
   <% end %>
-</div>
+
 
 
 

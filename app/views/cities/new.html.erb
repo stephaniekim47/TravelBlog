@@ -1,12 +1,29 @@
+<%= stylesheet_link_tag "newcity", :media => "all" %>
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
+
+  <%= link_to country_path(@country) do %>
+  <div id="back">Back</div>
+  <% end %>
+
+<div id="background"></div>
+
+<div id="container">
+  <div id="inside_cont">
 <%= form_for [@country, @country.cities.build], :html => { :multipart => true } do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
 
-  <%= f.file_field :photo %>
+  
+  	<div id="city_name">	
+    New City</div><br>
+    
+    <%= f.text_field :title, id:"box" %>
 
-  <p>
-    <%= f.submit %>
-  </p>
+    <div class="upload">
+  <%= f.file_field :photo %></div>
+
+  	<div class="submit">
+    <%= f.submit %></div>
 <% end %>
+</div>
+
+</div>

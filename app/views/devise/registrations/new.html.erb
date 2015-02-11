@@ -1,4 +1,12 @@
-<h2>Sign up</h2>
+<%= stylesheet_link_tag "registration", :media => "all" %>
+
+<%= link_to countries_path do %>
+  <div id="back">Back</div>
+<% end %>
+
+<div id="container">
+  <div id="inside_cont">
+<div id="login">Sign up</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -26,4 +34,7 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+</div>
+<%= link_to "Log in", new_session_path(resource_name), id: "login" %><br />
+</div>
