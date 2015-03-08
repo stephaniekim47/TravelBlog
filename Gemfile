@@ -12,6 +12,8 @@ gem 'devise'
 
 gem 'cancan'
 
+gem 'aws-sdk', '< 2.0'
+
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
