@@ -1,13 +1,10 @@
 class CountriesController < ApplicationController
    
-  before_filter do
-    unless current_user.try(:admin?)
-      :require_permission, :except => [:show, :index, :new, :create]
-    end
-  end
+  before_filter :require_permission, :except => [:show, :index, :new, :create]
+
 
    def require_permission
-      if current_user != Country.find(params[:id]).user 
+      unless current_user == Country.find(params[:id]).user or current_user.try(:admin?)
           redirect_to root_path
     end
   end
