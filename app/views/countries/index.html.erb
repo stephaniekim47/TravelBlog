@@ -47,7 +47,7 @@
       <div id="pic">
       <%= link_to( image_tag(country.photo.url(:medium)), country_path(country) ) %></div></div></div>
       <div id="ed">
-      <% if current_user == country.user or current_user.try(:admin?) == true %>
+      <% if current_user.try(:admin?) == true %>
         <div id="editer">
 
         <%= link_to(  image_tag('edit.png'), edit_country_path(country), id: "icon") %></div>
