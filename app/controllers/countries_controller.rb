@@ -1,6 +1,10 @@
 class CountriesController < ApplicationController
    
-   before_filter :require_permission, :except => [:show, :index, :new, :create]
+  before_filter do
+    unless current_user.try(:admin?)
+      :require_permission, :except => [:show, :index, :new, :create]
+    end
+  end
 
    def require_permission
       if current_user != Country.find(params[:id]).user 
