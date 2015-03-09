@@ -42,7 +42,9 @@
       <div id="each">
       <div id="title">
         <%= link_to country.title, country_path(country), id: "title_text" %></div><br>
-      <%= link_to " ", country_path(country), id: "pic_overlay" %>
+      <div id="overlaywrapper">
+        <%= link_to " ", country_path(country), id: "pic_overlay" %>
+      </div>
       <div id="pic_container">
       <div id="pic_cropper">
       <div id="pic">
