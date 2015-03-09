@@ -22,7 +22,7 @@
 
 
 <div id="container">
-    <% if current_user == country.user %>
+    <% if current_user == @country.user %>
         <div id="new_city_box">
         <%= link_to '', new_country_city_path(@country), id: "new_city_center"%>
         <%= link_to 'New City', new_country_city_path(@country), id: "newcitylink" %></div>
