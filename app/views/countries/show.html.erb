@@ -37,7 +37,7 @@
                         <div id="circle_div">
                             <%= image_tag city.photo.url(:medium), id: "circle" %></div>
                         </div>
-                        <% if current_user == country.user or current_user.try(:admin?) %>
+                        <% if current_user == @country.user or current_user.try(:admin?) %>
                         <div id="links">
                             <div id="delete_div">
                             <%= link_to 'Delete', [city.country, city], method: :delete, id: "delete_text" %></div>   
