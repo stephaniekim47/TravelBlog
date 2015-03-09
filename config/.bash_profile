@@ -1,0 +1,3 @@
+export AWSAccessKeyId=AKIAJEJW36PLVSO2FZTA
+export AWSSecretKey=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
+export AWS_BUCKET=travel123
