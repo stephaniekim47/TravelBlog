@@ -21,13 +21,14 @@
 <% end %>
 
 <div id="background"></div>
-
+      <% if current_user %>
       <div id="wrapper">
+
         <div id="new_country_box">
         <%= link_to '', new_country_path, id: "new_country" %> 
           <%= link_to 'New Country', new_country_path, id: "new_country_text" %>
 
-          </div></div>
+          </div></div><% end %>
 
 <div id="country_container">
   <div id="countries">Countries</div>
