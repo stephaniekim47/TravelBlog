@@ -1,0 +1,252 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+
+html, body {
+    font-family: open sans;
+    margin: 0;
+    padding: 0;
+
+}
+
+.fixed{
+    position: fixed;
+    top: 0;
+    z-index: 600;
+
+}
+
+
+.pad {
+    padding: 63px 0 0;
+}
+
+
+#pic_container {
+    width: 960px;
+    height: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0px 0px 66px 1px;
+}
+
+#pic {
+    position: absolute;
+    margin: auto;
+    width: 108%;
+    height: 300px;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+}
+
+#pic_cropper {
+    position: relative;
+}
+
+
+#each {
+    position: relative;
+
+    z-index: 50;
+}
+
+#title {
+    position: absolute;
+    font-size: 60px;
+    color: whitesmoke;
+    margin-right: auto;
+    text-align: center;
+    right: 0%;
+    left: 0%;
+    top: 45%;
+    line-height: 0;
+    text-decoration: none;
+    z-index: 500;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+#wrapper {
+    width: 100%;
+    height: 40px;
+    margin: 0;
+
+    padding-top: 23px;
+    position: fixed;
+    z-index: 200;
+}
+
+#new_country {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+}
+
+#new_country:hover {
+    opacity: 0.8;
+}
+
+#new_country:active {
+    box-shadow: 0px 0px 9px 4px #16a085 inset;
+}
+
+#new_country_text {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 50%;
+    text-align: center;
+    line-height: 0;
+    color: whitesmoke;
+    font-size: 13px;
+}
+
+
+#pic_overlay {
+    background-color: black;
+    width: 960px;
+    height: 300px;
+    position: absolute;
+    z-index: 300;
+    opacity: .3;
+    right: 0;
+    left: 0;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+#pic_overlay:hover {
+    opacity: .2;
+}
+
+#title_text {
+    color: whitesmoke;
+    font-weight: 100;
+}
+
+#title:hover ~ #pic_overlay {
+    opacity: .2;
+}
+
+#countries {
+    font-size: 26px;
+    font-weight: 300;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    color: whitesmoke;
+    z-index: 100;
+    position: relative;
+}
+
+#ed {
+    width: 198px;
+    text-align: center;
+    margin: auto;
+    height: 31px;
+    position: relative;
+}
+
+#editer {
+    position: absolute;
+    left: 48px;
+    top: -3px;
+}
+
+#deleter {
+    position: absolute;
+    right: 28%;
+    top: 7%;
+}
+
+#line {
+    top: 12%;
+    position: absolute;
+    left: 48%;
+    color: whitesmoke;
+}
+
+#new_country_box {
+    width: 100px;
+    height: 40px;
+    background-color: #1abc9c;
+    border-radius: 4px;
+    position: relative;
+    float: left;
+    margin-left: 2%;
+    box-shadow: 0px 0px 15px black;
+}
+
+#background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    /* background-image: url(http://i.imgur.com/ERbLXuz.jpg); */
+    z-index: 10;
+
+    background-color: #bdc3c7;
+}
+
+#country_container {
+    z-index: 100;
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    background-color: #2c3e50;
+}
+
+
+.log {
+    position: fixed;
+    width: 100px;
+    height: 40px;
+    z-index: 500;
+    color: whitesmoke;
+    text-align: center;
+    right: 0%;
+    background-color: #2c3e50;
+}
+
+#stuff {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 1px;
+    left: -2px;
+}
+
+.log_text {
+    color: whitesmoke;
+    position: relative;
+    top: 7px;
+}
+
+#icon {
+    -webkit-filter: invert(100%);
+}
+
+
+#new_country_box:active {
+    box-shadow: 0px 0px 15px black inset;
+}
+
+.log:hover {
+    transition: background-color 0.4s ease;
+    background-color: #16a085;
+}
+
+#cont {
+    padding-top: 40px;
+}
+
+#overlaywrapper {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    margin: auto;
+}
