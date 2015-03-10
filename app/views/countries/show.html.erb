@@ -8,17 +8,14 @@
 
 <div id="back_overlay">
     </div>
+<div id="backbox">
+<%= link_to '', countries_path, id: "back" %>
+<%= link_to "Back", countries_path, id: "backtext" %></div>
 
-  <%= link_to countries_path do %>
-  <div id="back">Back</div>
-  <% end %>
-
-<div id="country_container">
     <div id="country_name">
         <%= @country.title %>
     </div>
 
-</div>
 
 
 <div id="container">

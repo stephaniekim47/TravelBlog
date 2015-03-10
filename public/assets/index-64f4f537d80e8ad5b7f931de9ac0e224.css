@@ -1,5 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
 
+html, body {
+    font-family: open sans;
+    margin: 0;
+    padding: 0;
+
+}
 
 .fixed{
     position: fixed;
@@ -138,16 +144,16 @@ a {
 
 #editer {
     position: absolute;
-    left: 66px;
-    top: 4px;
+    left: 48px;
+    top: -3px;
     height: 25px;
     width: 25px;
 }
 
 #deleter {
     position: absolute;
-    right: 35%;
-    top: 16%;
+    right: 28%;
+    top: 7%;
 }
 
 #line {
@@ -183,6 +189,18 @@ a {
     background-color: #2c3e50;
 }
 
+
+.log {
+    position: fixed;
+    width: 100px;
+    height: 40px;
+    z-index: 500;
+    color: whitesmoke;
+    text-align: center;
+    right: 0%;
+    background-color: #2c3e50;
+}
+
 #stuff {
     width: inherit;
     height: inherit;
@@ -191,11 +209,21 @@ a {
     left: -2px;
 }
 
+.log_text {
+    color: whitesmoke;
+    position: relative;
+    top: 7px;
+}
+
 #icon {
     -webkit-filter: invert(100%);
 }
 
 
+.log:hover {
+    transition: background-color 0.4s ease;
+    background-color: #16a085;
+}
 
 #new_country_box:hover {
     transition: background-color 0.4s ease;

@@ -10,8 +10,20 @@
 </head>
 <body>
 
-
+<div id="navbar"></div>
+<% unless current_user %>
+    <div class="log">
+      <%= link_to "", new_user_session_path, id: "stuff" %>
+      <%= link_to "Login", new_user_session_path, :class => "log_text" %>
+    </div>
+<% else %>
+  <div class="log">
+    <%= link_to "", destroy_user_session_path, method: :delete, id: "stuff" %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "log_text" %></div>
+<% end %>
 <%= yield %>
+
+
 
 </body>
 </html>
