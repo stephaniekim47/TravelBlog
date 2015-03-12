@@ -44,7 +44,7 @@ class ProfilesController < ApplicationController
 	end
 
 	def show
-		@profile = Profile.find_by(:user => current_user.id)
+		@profile = Profile.find_by(params[:id])
 	end
    
     def index
