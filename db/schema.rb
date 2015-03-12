@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150308094130) do
+ActiveRecord::Schema.define(version: 20150312042959) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "title"
@@ -42,10 +42,8 @@ ActiveRecord::Schema.define(version: 20150308094130) do
 
   add_index "countries", ["user_id"], name: "index_countries_on_user_id"
 
-  create_table "profiles", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+# Could not dump table "profiles" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 # Could not dump table "users" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass

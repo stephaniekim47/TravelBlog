@@ -1,9 +1,10 @@
-<%= form_for @profile do |f| %>
+<%= form_for(@profile) do |f| %>
+    <br><br><br><br><br>
+	<%= f.text_field :name%>
+	<%= f.file_field :photo %>
 
-<%= f.file_field :photo %>
-
-<div class="actions">
-<%= f.submit %>
-</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
 
 <% end %>
