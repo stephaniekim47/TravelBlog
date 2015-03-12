@@ -1,0 +1,109 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+
+body {
+    background-image: url(http://hdw.datawallpaper.com/nature/passenger-aircraft-at-sunset-hd-wallpaper-333440.jpg);
+    font-family: open sans;
+    background-size: 100%;
+}
+
+#container {
+    width: 43%;
+    height: 78%;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(236, 240, 241, 0.5);
+    border-radius: 10px;
+    box-shadow: 0px 0px 43px;
+}
+
+#inside_cont {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+#new_user {
+    text-align: center;
+}
+
+a#signup {
+    color: rgba(211, 84, 0,1.0);
+    position: relative;
+    top: 118px;
+    left: -75px;
+    font-weight: 600;
+}
+
+a#forgot {
+    color: rgba(211, 84, 0,1.0);
+    top: 120px;
+    position: relative;
+    left: -76px;
+    font-weight: 600;
+}
+
+label {
+    font-size: 16px;
+}
+
+input#user_email {
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+input#user_password {
+    height: 20px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+input#user_remember_me {
+}
+
+.field {
+    margin-top: 10px;
+}
+
+
+#back {
+    position: absolute;
+    width: 100px;
+
+    height: 40px;
+    top: 0px;
+    left: 0px;
+}
+#backbox {
+    width: 100px;
+    height: 40px;
+    background-color: #1abc9c;
+    position: fixed;
+    z-index: 500;
+    float: left;
+}
+
+#backtext {
+    position: absolute;
+    width: inherit;
+    text-align: center;
+    line-height: 0;
+    color: whitesmoke;
+    font-size: 16px;
+    top: 18px;
+}
+
+#backbox:hover {
+    transition: background-color 0.4s ease;
+    background-color: #e67e22;
+}

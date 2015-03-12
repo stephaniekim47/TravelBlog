@@ -1,10 +1,14 @@
 <%= stylesheet_link_tag "login", :media => "all" %>
-  <%= link_to countries_path do %>
-  <div id="back">Back</div>
-  <% end %>
+
+<div id="backbox">
+<%= link_to '', countries_path, id: "back" %>
+<%= link_to "Back", countries_path, id: "backtext" %></div>
+
+<div id="title">Login</div>
+
 <div id="container">
   <div id="inside_cont">
-<div id="login">Login</div>
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
