@@ -44,7 +44,7 @@ class ProfilesController < ApplicationController
 	end
 
 	def show
-		@profile = Profile.find_by(params[:id])
+		@profile = Profile.find(params[:id])
 	end
    
     def index
