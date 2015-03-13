@@ -45,6 +45,9 @@ class ProfilesController < ApplicationController
 
 	def show
 		@profile = Profile.find(params[:id])
+		unless @profile
+			render "new"
+		end
 	end
    
     def index
