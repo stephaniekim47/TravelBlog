@@ -33,6 +33,7 @@
 
 
 
+
 body {
     font-family: open sans;
     margin: 0;
@@ -109,7 +110,7 @@ body {
 
 #topleftbutton:hover {
     transition: background-color 0.4s ease;
-    background-color: #e74c3c;
+    background-color: #e67e22;
 }
 
 a {
@@ -140,7 +141,6 @@ a#stuff {
 a.profile_text {
     top: 7px;
     position: relative;
-    color:whitesmoke;
 }
 
 .profile:hover {

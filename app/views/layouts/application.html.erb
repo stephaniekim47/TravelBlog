@@ -20,6 +20,9 @@
   <div class="log">
     <%= link_to "", destroy_user_session_path, method: :delete, id: "stuff" %>
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "log_text" %></div>
+  <div class="profile">
+    <%= link_to "", profile_path(current_user.profile.id), method: :get, id: "stuff" %>
+    <%= link_to "Profile", profile_path(current_user.profile.id), method: :get, :class => "profile_text" %></div>
 <% end %>
 <%= yield %>
 
