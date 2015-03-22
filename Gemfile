@@ -10,7 +10,6 @@ end
 
 gem 'devise'
 
-gem 'cancan'
 
 gem 'aws-sdk', '< 2.0'
 

@@ -20,15 +20,20 @@
   <div class="log">
     <%= link_to "", destroy_user_session_path, method: :delete, id: "stuff" %>
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "log_text" %></div>
-  <div class="profile">
-    <% if current_user.profile %>
-      <%= link_to "", profile_path(current_user.profile.id), method: :get, id: "stuff" %>
-      <%= link_to "Profile", profile_path(current_user.profile.id), method: :get, :class => "profile_text" %>
-    <% else %>
+  <% if not @edit_profile %>
+    <div class="profile">
+      <% if current_user.profile and not @on_profile %>
+        <%= link_to "", profile_path(current_user.profile.id), method: :get, id: "stuff" %>
+        <%= link_to "Profile", profile_path(current_user.profile.id), method: :get, :class => "profile_text" %>
+      <% elsif current_user.profile and @on_profile%>
+        <%= link_to "", edit_profile_path(current_user.profile.id), method: :get, id: "stuff" %>
+        <%= link_to "Edit Profile", edit_profile_path(current_user.profile.id), method: :get, :class => "profile_text" %>
+      <% else %>
         <%= link_to "", new_profile_path, method: :get, id: "stuff" %>
         <%= link_to "Profile", new_profile_path, method: :get, :class => "profile_text" %>
-    <% end %>
+      <% end %>
     </div>
+  <% end %>
 <% end %>
 <%= yield %>
 

@@ -1,7 +1,13 @@
 class ProfilesController < ApplicationController
 
 	before_filter :require_permission, :except => [:show, :index, :new, :create]
-	
+	after_filter :turn_off
+
+	def turn_off
+		@on_profile = false
+		@edit_profile = false
+	end
+
 	def require_permission
      	unless current_user == Profile.find(params[:id]).user or current_user.try(:admin?)
          	redirect_to root_path
@@ -41,11 +47,14 @@ class ProfilesController < ApplicationController
 
 	def edit
 		@profile = Profile.find(params[:id])
+		@edit_profile = true
 	end
 
 	def show
 		@profile = Profile.find(params[:id])
+		@on_profile = true
 		unless @profile
+			flash[:notice] = "new profile"
 			render "new"
 		end
 	end

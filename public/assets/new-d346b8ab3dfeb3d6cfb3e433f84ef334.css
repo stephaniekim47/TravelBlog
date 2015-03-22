@@ -61,13 +61,15 @@ a {
     display: table-cell;
     vertical-align: middle;
     z-index: 100;
+    position: absolute;
     background-color: rgba(236, 240, 241,0.7);
     margin: auto;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px;
 }
 
 #submit {
