@@ -10,6 +10,7 @@ end
 
 gem 'devise'
 
+gem 'rails-gallery'
 
 gem 'aws-sdk', '< 2.0'
 

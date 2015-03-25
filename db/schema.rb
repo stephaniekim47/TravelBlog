@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150321210028) do
+ActiveRecord::Schema.define(version: 20150323070057) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "title"
@@ -42,6 +42,26 @@ ActiveRecord::Schema.define(version: 20150321210028) do
 
   add_index "countries", ["user_id"], name: "index_countries_on_user_id"
 
+  create_table "galleries", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "city_id"
+  end
+
+  add_index "galleries", ["city_id"], name: "index_galleries_on_city_id"
+
+  create_table "gallery_photos", force: :cascade do |t|
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "gallery_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  add_index "gallery_photos", ["gallery_id"], name: "index_gallery_photos_on_gallery_id"
+
   create_table "profiles", force: :cascade do |t|
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -54,7 +74,6 @@ ActiveRecord::Schema.define(version: 20150321210028) do
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
-
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

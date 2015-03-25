@@ -1,0 +1,17 @@
+<div id="container">
+
+  	<% @gallery.gallery_photos.each do |gphoto| %>
+    	<%= image_tag gphoto.photo.url(:small)%>
+    	<div id="delete_div">
+    </div>   
+  <% end %>
+  	<%= form_for [@gallery.city.country, @gallery.city, @gallery], url: {action: 'update'} do |f| %>
+		<div class = "upload">
+			<%= f.file_field :photo %>
+		</div>
+		<div class="actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
+
+</div>

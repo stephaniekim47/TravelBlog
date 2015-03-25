@@ -6,44 +6,46 @@
     <%= image_tag @country.photo.url(:medium), :id => "back_image" %>
 </div>
 
-<div id="back_overlay">
-    </div>
-<div id="topleftbutton">
-<%= link_to '', countries_path, id: "back" %>
-<%= link_to "Back", countries_path, id: "backtext" %></div>
+<div id="back_overlay"></div>
 
-    <div id="title">
-        <%= @country.title %>
-    </div>
+<div id="topleftbutton">
+    <%= link_to '', countries_path, id: "back" %>
+    <%= link_to "Back", countries_path, id: "backtext" %>
+</div>
+
+<div id="title">
+    <%= @country.title %>
+</div>
 
 
 
 <div id="container">
     <% if current_user == @country.user %>
         <div id="new_city_box">
-        <%= link_to '', new_country_city_path(@country), id: "new_city_center"%>
-        <%= link_to 'New City', new_country_city_path(@country), id: "newcitylink" %></div>
-    <% end %>
-            <div id="city_boxes" >
-                <% @country.cities.each do |city| %>
-                    <div id="window_container">
-                        <div id="window_overlay"></div>
-                        <div id="city_title">
-                            <%= city.title %></div>
-                        <div id="window">
-                        <div id="circle_div">
-                            <%= image_tag city.photo.url(:medium), id: "circle" %></div>
-                        </div>
-                        <% if current_user == @country.user or current_user.try(:admin?) %>
-                        <div id="links">
-                            <div id="delete_div">
-                            <%= link_to 'Delete', [city.country, city], method: :delete, id: "delete_text" %></div>   
-                        </div>
-                        <% end %>
+            <%= link_to '', new_country_city_path(@country), id: "new_city_center"%>
+            <%= link_to 'New City', new_country_city_path(@country), id: "newcitylink" %>
         </div>
-
+    <% end %>
+    <div id="city_boxes" >
+        <% @country.cities.each do |city| %>
+            <div id="window_container">
+                <%= link_to " ", country_city_gallery_path(@country, city, city.gallery), id: "window_overlay" %>
+                <div id="city_title">
+                    <%= city.title %>
+                </div>
+                <div id="window">
+                    <div id="circle_div">
+                        <%= image_tag city.photo.url(:medium), id: "circle" %></div>
+                        <%= link_to '', [city.country, city], method: :show %>
+                </div>
+                <% if current_user == @country.user or current_user.try(:admin?) %>
+                    <div id="links">
+                        <div id="delete_div">
+                            <%= link_to 'Delete', [city.country, city], method: :delete, id: "delete_text" %>
+                        </div>   
+                    </div>  
+                <% end %>
+            </div>
         <% end %>
-
     </div>
-
 </div>

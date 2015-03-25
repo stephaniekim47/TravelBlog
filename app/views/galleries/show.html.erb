@@ -1,0 +1,6 @@
+
+<div class="thumbs">
+	<% @gallery.gallery_photos.each do |gphoto| %>
+		<a href="<%= gphoto.photo.url%>", style="background-image:url(<%= gphoto.photo.url%>)">
+	<% end %>
+</div>

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :profiles
   resources :countries do
-    resources :cities
+    resources :cities do
+      resources :galleries
+    end
   end
   root 'countries#index'
   # The priority is based upon order of creation: first created -> highest priority.
