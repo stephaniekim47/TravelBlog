@@ -8,7 +8,7 @@ body {
     font-size: 43px;
     padding-bottom: 20px;
     z-index: inherit;
-    margin-top: 68px;
+    padding-top: 57px;
 }
 
 #box {
@@ -27,7 +27,8 @@ body {
 
 #upload {
     width: 137px;
-    padding-bottom: 2px;
+    padding-bottom: 39px;
+    margin: auto;
 }
 
 a {
@@ -36,18 +37,13 @@ a {
 }
 
 #container {
-    width: 500px;
     height: 450px;
-    display: table-cell;
-    vertical-align: middle;
-    z-index: 100;
-    background-color: rgba(236, 240, 241,0.7);
+    background-color: rgba(236, 240, 241,0.5);
     margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
 
+    margin-top: 50px;
+    text-align: center;
+    width: 500px;
 }
 
 #submit {
@@ -55,11 +51,17 @@ a {
 }
 
 #error_explanation {
-    position: absolute;
+    /* position: absolute; */
     z-index: 500;
     right: 311px;
     width: 500px;
     top: 10px;
     color: white;
+}
+
+#form_id {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
 }
 
