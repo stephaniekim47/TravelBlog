@@ -175,3 +175,37 @@ a {
     position: absolute;
     margin: auto;
 }
+
+
+#new_button {
+    position: absolute;
+    font-size: 50px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #22A7F0;
+    left: 4%;
+    top: 10%;
+    z-index: 500;
+}
+
+#new_button_background {
+    width: inherit;
+    height: inherit;
+    position: fixed;
+}
+
+#new_button_text {
+    width: 60px;
+    position: fixed;
+    text-align: center;
+    color: whitesmoke;
+    height: 60px;
+    line-height: 1.2;
+    top: 66px;
+}
+
+#new_button:hover {
+    background-color: #F5AB35;
+    transition: background-color 0.4s ease;
+}

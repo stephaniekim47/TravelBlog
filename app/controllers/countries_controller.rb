@@ -4,7 +4,7 @@ class CountriesController < ApplicationController
 
 
    def require_permission
-      unless current_user == Country.find(params[:id]).user or current_user.try(:admin?)
+    unless current_user == Country.find(params[:id]).user or current_user.try(:admin?)
           redirect_to root_path
     end
   end
@@ -14,26 +14,18 @@ class CountriesController < ApplicationController
    end
 
    def create
-      if current_user
-       @country = Country.new(country_params)
-       @country.user = current_user
+      @country = Country.new(country_params)
+      @country.user = current_user
 
-       if @country.save
-          redirect_to @country
-       else 
-          render 'new'
-        end
-      else
-        redirect_to root_path
+      if @country.save
+        redirect_to @country
+      else 
+        render 'new'
       end
    end   
 
    def new
-      if current_user
-        @country = Country.new
-      else
-        redirect_to root_path
-      end
+      @country = Country.new
    end
 
    def index

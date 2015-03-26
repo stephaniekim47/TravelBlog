@@ -11,9 +11,8 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.precompile += %w( index.css )
-Rails.application.config.assets.precompile += %w( new.css )
+Rails.application.config.assets.precompile += %w( form.css )
 Rails.application.config.assets.precompile += %w( show.css )
 Rails.application.config.assets.precompile += %w( index.js )
 Rails.application.config.assets.precompile += %w( login.css )
 Rails.application.config.assets.precompile += %w( registration.css )
-Rails.application.config.assets.precompile += %w( newcity.css )

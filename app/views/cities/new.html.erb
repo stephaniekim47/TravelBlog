@@ -1,29 +1,33 @@
-<%= stylesheet_link_tag "newcity", :media => "all" %>
+<%= stylesheet_link_tag "form", :media => "all" %>
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
 
-  <%= link_to country_path(@country) do %>
-  <div id="back">Back</div>
-  <% end %>
+<div id="topleftbutton">
+<%= link_to '', countries_path, id: "back" %>
+<%= link_to "Back", countries_path, id: "backtext" %></div>
 
-<div id="background"></div>
-
-<div id="container">
-  <div id="inside_cont">
 <%= form_for [@country, @country.cities.build], :html => { :multipart => true } do |f| %>
-
-  
-  	<div id="city_name">	
-    New City</div><br>
-    
-    <%= f.text_field :title, id:"box" %>
-
-    <div class="upload">
-  <%= f.file_field :photo %></div>
-
-  	<div class="submit">
-    <%= f.submit %></div>
+  <div id="error_explanation">
+    <% if @city.errors.any? %>
+      <%= pluralize(@city.errors.count, "error") %> prohibited
+        this city from being saved:
+        <ul>
+          <% @city.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+    <% end %>
+  </div>
+  <div id="container">
+    <div id="country_name">
+      <%= f.label "New city" %><br>
+    </div>
+    <%= f.text_field :title, id: "box"%>  
+    <div id="upload">
+      <%= f.file_field :photo %>
+    </div>
+    <div id="submit">
+      <%= f.submit %>
+    </div>
+  </div>
 <% end %>
-</div>
-
-</div>

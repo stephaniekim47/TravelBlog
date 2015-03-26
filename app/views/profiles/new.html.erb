@@ -1,11 +1,30 @@
-<%= form_for(@profile) do |f| %>
-    <br><br><br><br><br>
-    Name<br>
-	<%= f.text_field :name%><br>
-	<%= f.file_field :photo %>
+<%= stylesheet_link_tag "form" %>
 
-	<div class="actions">
-		<%= f.submit %>
-	</div>
-
+<%= form_for @profile do |f| %>
+  <div id="error_explanation">
+    <% if @profile.errors.any? %>
+      <%= pluralize(@profile.errors.count, "error") %> prohibited
+        this profile from being saved:
+        <ul>
+          <% @profile.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+    <% end %>
+  </div>
+  <div id="container">
+    <div id="country_name">
+      <%= f.label "New Profile" %><br>
+    </div>
+    <%= f.text_field :name, id: "box"%>  
+    <div id="upload">
+    	<%= f.label "Profile Picture" %>
+    	<%= f.file_field :photo %>
+    </div>
+    <div id="submit">
+      <%= f.submit %>
+    </div>
+  </div>
 <% end %>
+
+
