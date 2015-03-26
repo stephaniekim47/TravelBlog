@@ -1,3 +1,10 @@
+<% if current_user == @gallery.city.country.user %>
+  <div id="new_button">
+    <%= link_to '', edit_country_city_gallery_path(@gallery.city.country, @gallery.city, @gallery), id: "new_button_background" %> 
+    <%= link_to '+',edit_country_city_gallery_path(@gallery.city.country, @gallery.city, @gallery), id: "new_button_text" %>
+  </div>
+<% end %>
+
 
 <div class="thumbs">
 	<% @gallery.gallery_photos.each do |gphoto| %>
